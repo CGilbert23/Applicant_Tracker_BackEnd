@@ -1,0 +1,26 @@
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+-- Table: public.applicants
+DROP TABLE IF EXISTS public.applicants;
+CREATE TABLE IF NOT EXISTS public.applicants (
+    applicant_id uuid NOT NULL DEFAULT uuid_generate_v4(),
+    store character varying COLLATE pg_catalog."default",
+    first_name character varying COLLATE pg_catalog."default",
+    last_name character varying COLLATE pg_catalog."default",
+    position character varying COLLATE pg_catalog."default",
+    recruiterscreen_status character varying COLLATE pg_catalog."default",
+    testing_status character varying COLLATE pg_catalog."default",
+    interview_status character varying COLLATE pg_catalog."default",
+    backgroundcheck_status character varying COLLATE pg_catalog."default",
+    drugscreen_status character varying COLLATE pg_catalog."default",
+    paperwork_status character varying COLLATE pg_catalog."default",
+    date_in timestamp without time zone,
+    currentdate timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    variance character varying COLLATE pg_catalog."default",
+    notes character varying COLLATE pg_catalog."default",
+    CONSTRAINT applicants_pkey PRIMARY KEY (applicant_id)
+) TABLESPACE pg_default;
+
+ALTER TABLE
+    IF EXISTS public.applicants OWNER to postgres;
+
