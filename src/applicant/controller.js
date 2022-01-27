@@ -1,7 +1,8 @@
-const methods = {};
 const { validationResult } = require("express-validator");
 const { queryInstance } = require("../db/connection");
 
+
+/*GET ALL DATE REQUEST*/
 const getApplicants = async (req, res) => {
   try {
     const applicants = await queryInstance('SELECT * from applicants');
@@ -11,8 +12,8 @@ const getApplicants = async (req, res) => {
     return res.status(500).send(err.message);
   }
 };
-/*recruiterscreen_completion = '${recruiterscreen_completion}, testing_completion=${testing_completion}, interview_completion = ${interview_completion}, backgroundcheck_completion=${backgroundcheck_completion}, drugscreen_completion = ${drugscreen_completion}, paperwork_completion = ${paperwork_completion}*/
 
+/*UPDATE STATUS DATA REQUEST*/
 const updateApplicants = async (req, res) => {
   try {
     const applicant_id  = req.params.applicant_id;
@@ -27,6 +28,7 @@ const updateApplicants = async (req, res) => {
   }
 };
 
+/*ADD NEW APPLICANT REQUEST*/
 const addApplicant = async (req, res) => {
   const errors = validationResult(req);
 
@@ -45,6 +47,8 @@ const addApplicant = async (req, res) => {
   }
 }; 
 
+
+/*DELETE APPLICANT REQUEST*/
 const deleteApplicant = async (req, res) => {
   try {
     const applicant_id = req.params.applicant_id;

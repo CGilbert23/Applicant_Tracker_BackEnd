@@ -3,25 +3,23 @@ const cors = require("cors");
 const { connectDB } = require("./db/connection");
 
 
-
 const app = express();
 
-// Connect Database
+/* CONNECT DATABASE */
 connectDB();
 
-// Init Middleware
+/* INIT MIDDELWARE */
 app.use(express.json({ extended: false }));
 
-// Enabling Cors
+/* ENABLING CORS - ALLOWS REQUEST FROM ANY DOMAIN */
 app.use(cors());
 
-// Enable static path
+/* ENABLING STATIC PATH */
 app.use(express.static("images"));
 
 app.get(`/`, (req, res) => res.send("Api Running"));
 
-// Define Routes
-
+/*DECLARE ROUTES*/
 const applicants = require("./applicant/router");
 
 app.use(`/api/applicants`, applicants); 
