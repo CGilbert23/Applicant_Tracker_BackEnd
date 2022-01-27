@@ -1,5 +1,9 @@
 /*COMPLETION DATE VALUE (ALL COLS = "COMPLETE")*/
 
+create or replace function update_completion_date()
+returns trigger
+as $$
+
 
 BEGIN
     IF (new.recruiterscreen_status = 'Complete' OR old.recruiterscreen_status = 'Complete') 
@@ -26,4 +30,13 @@ BEGIN
 	return New;
 end;
 
+$$ language plpgsql;
+
+/*Set Function*/
+
+create trigger update_completion_date
+before update
+on applicants
+for each row
+execute procedure update_completion_date();
 

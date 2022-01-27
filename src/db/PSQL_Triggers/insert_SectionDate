@@ -1,5 +1,8 @@
 /*SECTION DATE (SECTION COL = 'COMPLETE')*/
 
+create or replace function insert_section_date()
+returns trigger
+as $$
 
 BEGIN
 	IF new.interview_status = 'Complete'
@@ -29,3 +32,15 @@ BEGIN
     
 	return New;
 end
+
+$$ language plpgsql;
+
+
+
+/*Set Function*/
+
+create trigger insert_section_date
+before insert
+on applicants
+for each row
+execute procedure insert_section_date();
