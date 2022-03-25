@@ -1,8 +1,8 @@
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 -- Table: public.practiceTable
-DROP TABLE IF EXISTS public.practiceTable;
-CREATE TABLE IF NOT EXISTS public.practiceTable (
+DROP TABLE IF EXISTS public.applicants;
+CREATE TABLE IF NOT EXISTS public.applicants (
     applicant_id uuid NOT NULL DEFAULT uuid_generate_v4(),
     store character varying COLLATE pg_catalog."default",
     first_name character varying COLLATE pg_catalog."default",
@@ -28,17 +28,17 @@ CREATE TABLE IF NOT EXISTS public.practiceTable (
 	paperwork_completion date,
 	overall_completion date,
 	
-	recruiterscreen_var numeric,
-	testing_var numeric,
-	interview_var numeric,
-	backgroundcheck_var numeric,
-	drugscreen_var numeric,
-	paperwork_var numeric,
-	overall_completion_var numeric,
+	recruiterscreen_var numeric GENERATED ALWAYS AS (recruiterscreen_completion - date_in) STORED,
+	testing_var numeric GENERATED ALWAYS AS (testing_completion - date_in) STORED,
+	interview_var numeric GENERATED ALWAYS AS (interview_completion - date_in) STORED,
+	backgroundcheck_var numeric GENERATED ALWAYS AS (backgroundcheck_completion - date_in) STORED,
+	drugscreen_var numeric GENERATED ALWAYS AS (drugscreen_completion - date_in) STORED,
+	paperwork_var numeric GENERATED ALWAYS AS (paperwork_completion - date_in) STORED,
+	overall_completion_var numeric GENERATED ALWAYS AS (overall_completion - date_in) STORED,
 	
-    CONSTRAINT practiceTable_pkey PRIMARY KEY (applicant_id)
+    CONSTRAINT applicants_pkey PRIMARY KEY (applicant_id)
 ) TABLESPACE pg_default;
 
 ALTER TABLE
-    IF EXISTS practiceTable OWNER to postgres;
+    IF EXISTS applicants OWNER to postgres;
 

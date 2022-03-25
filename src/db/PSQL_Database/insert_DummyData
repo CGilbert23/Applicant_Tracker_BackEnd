@@ -1,15 +1,15 @@
-Insert into practicetable (store,first_name,last_name,position,recruiterscreen_status,testing_status,interview_status,backgroundcheck_status,drugscreen_status,paperwork_status,date_in)
-Values ('Subaru','Chris','Gilbert','Salesperson','Complete','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','1/21/2022'),
-('Subaru','Justin','Rosen','Salesperson','Complete','Schedueled','Incomplete','Incomplete','Incomplete','Incomplete','1/28/2022'),
-('Subaru','Laryssa','Orchard','Salesperson','Complete','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','1/21/2022'),
-('Subaru','Allison','Delancey','Salesperson','Complete','Schedueled','Incomplete','Incomplete','Incomplete','Incomplete','1/08/2022'),
+Insert into applicants (store,first_name,last_name,position,recruiterscreen_status,testing_status,interview_status,backgroundcheck_status,drugscreen_status,paperwork_status,date_in)
+Values ('Subaru','Chris','Gilbert','Salesperson','Complete','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','1/29/2022'),
+('Subaru','Justin','Rosen','Salesperson','Complete','Schedueled','Incomplete','Incomplete','Incomplete','Incomplete','1/26/2022'),
+('Subaru','Laryssa','Orchard','Salesperson','Complete','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','1/22/2022'),
+('Subaru','Allison','Delancey','Salesperson','Complete','Schedueled','Incomplete','Incomplete','Incomplete','Incomplete','1/15/2022'),
 
-('Chevrolet','Tyler','Gilbert','Salesperson','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','1/19/2022'),
-('Chevrolet','Jack','Chrystie','Salesperson','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','1/22/2022'),
-('Chevrolet','Charlie','Houston','Salesperson','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','1/12/2022'),
-('Chevrolet','Alex','Bond','Salesperson','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','1/21/2022'),
+('Chevrolet','Tyler','Gilbert','Salesperson','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','1/25/2022'),
+('Chevrolet','Jack','Chrystie','Salesperson','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','1/26/2022'),
+('Chevrolet','Charlie','Houston','Salesperson','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','1/28/2022'),
+('Chevrolet','Alex','Bond','Salesperson','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','Incomplete','1/23/2022'),
 
-('Ford Doylestown','Frank','Eldridge','Salesperson','Complete','Complete','Complete','Complete','Complete','Complete','1/20/2022'),
-('Ford Doylestown','Steve','Avant','Salesperson','Complete','Complete','Incomplete','Incomplete','Incomplete','Incomplete','1/15/2022'),
-('Ford Doylestown','Louis','Lexington','Salesperson','Complete','Schedueled','Incomplete','Incomplete','Incomplete','Incomplete','1/18/2022'),
-('Ford Doylestown','Silence','Dogood','Salesperson','Complete','Complete','Incomplete','Incomplete','Incomplete','Incomplete','1/22/2022')
+('Ford Doylestown','Frank','Eldridge','Salesperson','Complete','Complete','Complete','Complete','Complete','Complete','1/27/2022'),
+('Ford Doylestown','Steve','Avant','Salesperson','Complete','Complete','Incomplete','Incomplete','Incomplete','Incomplete','1/22/2022'),
+('Ford Doylestown','Louis','Lexington','Salesperson','Complete','Schedueled','Incomplete','Incomplete','Incomplete','Incomplete','1/25/2022'),
+('Ford Doylestown','Silence','Dogood','Salesperson','Complete','Complete','Incomplete','Incomplete','Incomplete','Incomplete','1/27/2022')

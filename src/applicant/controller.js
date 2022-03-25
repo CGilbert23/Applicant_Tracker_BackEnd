@@ -17,9 +17,10 @@ const getApplicants = async (req, res) => {
 const updateApplicants = async (req, res) => {
   try {
     const applicant_id  = req.params.applicant_id;
-    const {recruiterscreen_status, backgroundcheck_status, interview_status, paperwork_status, drugscreen_status, testing_status, notes } = req.body
     
-    const applicants = await queryInstance(`UPDATE applicants SET recruiterscreen_status = '${recruiterscreen_status}', testing_status='${testing_status}', interview_status='${interview_status}', backgroundcheck_status='${backgroundcheck_status}', drugscreen_status='${drugscreen_status}', paperwork_status='${paperwork_status}', notes='${notes}' WHERE applicant_id = '${applicant_id}' returning *`);
+    const {store,recruiterscreen_status, backgroundcheck_status, interview_status, paperwork_status, drugscreen_status, testing_status } = req.body
+   
+    const applicants = await queryInstance(`UPDATE applicants SET store = '${store}', recruiterscreen_status = '${recruiterscreen_status}', testing_status='${testing_status}', interview_status='${interview_status}', backgroundcheck_status='${backgroundcheck_status}', drugscreen_status='${drugscreen_status}', paperwork_status='${paperwork_status}' WHERE applicant_id = '${applicant_id}' returning *`);
     
     res.json({ applicants })
   } catch (err) {
